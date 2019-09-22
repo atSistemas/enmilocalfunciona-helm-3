@@ -24,3 +24,11 @@ redis:
   service:
     type: ClusterIP
     port: 6379
+
+# Worker
+worker:
+  nameOverride: "worker"
+  replicaCount: 1
+  image:
+    repository: dockersamples/examplevotingapp_worker
+    pullPolicy: IfNotPresent
