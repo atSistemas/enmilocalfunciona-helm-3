@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "voting-app.result.fullname" . }}
+  labels:
+{{ include "voting-app.labels" . | indent 4 }}
+spec:
+  type: {{ .Values.result.service.type }}
+  ports:
+  - name: result-service
+    port: {{ .Values.result.service.port }}
+    targetPort: {{ .Values.result.service.targetPort }}
+    nodePort: {{ .Values.result.service.nodePort }}
+  selector:
+    app.kubernetes.io/name: {{ include "voting-app.result.name" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}

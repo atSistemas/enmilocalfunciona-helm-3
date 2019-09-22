@@ -44,3 +44,17 @@ db:
   service:
     type: ClusterIP
     port: 5432
+
+# Result
+result:
+  nameOverride: "result"
+  replicaCount: 1
+  image:
+    repository: dockersamples/examplevotingapp_result
+    tag: before
+    pullPolicy: IfNotPresent
+  service:
+    type: NodePort
+    port: 5001
+    targetPort: 80
+    nodePort: 31001
