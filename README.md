@@ -30,6 +30,12 @@ deployment "worker" created
 
 The vote interface is then available on port 31000 on each host of the cluster, the result one is available on port 31001.
 
-Architecture
+**Architecture**
 
 ![Architecture](https://github.com/dockersamples/example-voting-app/raw/master/architecture.png)
+
+## Voting App Helm
+
+```sh
+helm upgrade --install <your-chart-name> voting-app-enmilocalfunciona --namespace voting-app
+```
