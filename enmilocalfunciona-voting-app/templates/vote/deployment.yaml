@@ -17,7 +17,7 @@ spec:
         app.kubernetes.io/instance: {{ .Release.Name }}
     spec:
       containers:
-        - name: {{ .Chart.Name }}
+        - name: {{ include "voting-app.vote.name" . }}
           image: "{{ .Values.vote.image.repository }}:{{ .Values.vote.image.tag }}"
           imagePullPolicy: {{ .Values.vote.image.pullPolicy }}
           ports:

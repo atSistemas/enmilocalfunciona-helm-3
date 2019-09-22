@@ -19,7 +19,7 @@ spec:
       containers:
       - image: "{{ .Values.redis.image.repository }}:{{ .Values.redis.image.tag }}"
         imagePullPolicy: {{ .Values.redis.image.pullPolicy }}
-        name: redis
+        name: {{ include "voting-app.redis.name" . }}
         volumeMounts:
         - mountPath: /data
           name: redis-data
