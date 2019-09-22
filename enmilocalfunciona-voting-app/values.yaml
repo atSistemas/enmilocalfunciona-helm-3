@@ -1,0 +1,14 @@
+# Voting app
+vote:
+  nameOverride: "vote"
+  service:
+    type: NodePort
+    port: 5000
+    nodePort: 31000
+  replicaCount: 1
+  image:
+    repository: dockersamples/examplevotingapp_vote
+    tag: before
+    pullPolicy: IfNotPresent
+  container:
+    port: 80

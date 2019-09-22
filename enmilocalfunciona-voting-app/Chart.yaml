@@ -1,0 +1,10 @@
+apiVersion: v1
+appVersion: "1.0"
+description: enmilocalfunciona.io voting-app Helm chart for Kubernetes
+name: enmilocalfunciona-voting-app
+version: 0.1.0
+maintainers:
+  - name: Carlos M. Cornejo
+    email: cmcornejo@atsistemas.com
+    url: https://enmilocalfunciona.io/tag/helm/
+icon: https://enmilocalfunciona.io/content/images/2019/08/Perrete_helm-02-2-1.png
